@@ -3,427 +3,991 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - GamePocket</title>
+    <title>Terms of Service — GamePocket</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #047857;
+            --primary-light: #d1fae5;
+            --primary-mid: #a7f3d0;
+            --accent: #10b981;
+            --badge-bg: #047857;
+            --text-1: #111827;
+            --text-2: #374151;
+            --text-3: #6b7280;
+            --bg: #f8fffe;
+            --surface: #ffffff;
+            --surface-2: #f3f4f6;
+            --border: #e5e7eb;
+            --border-light: #f0f8f4;
+            --warning-bg: #fffbeb;
+            --warning-border: #fde68a;
+            --warning-accent: #f59e0b;
+            --legal-bg: #f8f9fa;
+            --legal-border: #dadce0;
+            --danger-bg: #fef2f2;
+            --danger-border: #fecaca;
+            --danger-accent: #ef4444;
+            --danger-text: #991b1b;
+            --contact-from: #059669;
+            --contact-to: #10b981;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+            --shadow-hover: 0 4px 24px rgba(5,150,105,0.12);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #212529;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text-1);
+            line-height: 1.75;
+            font-size: 15px;
         }
-        .container {
-            background-color: white;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+        /* ── Progress bar ── */
+        #progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 200;
+            transition: width 0.1s linear;
         }
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+
+        /* ── Top nav ── */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248,255,254,0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 32px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
-        h1 {
-            color: #1a1a1a;
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+
+        .topbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-1);
+            font-weight: 700;
+            font-size: 1rem;
         }
-        .version-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: center;
+
+        .topbar-logo span { font-size: 1.4rem; }
+
+        .topbar-sep {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
         }
-        h2 {
-            color: #495057;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-left: 4px solid #28a745;
-            padding-left: 15px;
-        }
-        h3 {
-            color: #6c757d;
-            font-size: 1.2rem;
+
+        .topbar-page {
+            font-size: 0.85rem;
             font-weight: 500;
-            margin-top: 25px;
-            margin-bottom: 15px;
+            color: var(--primary);
         }
-        .highlight-box {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .important-notice {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-            border-left: 5px solid #e17055;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 25px 0;
-        }
-        .legal-section {
-            background-color: #f1f3f4;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 25px 0;
-            border: 1px solid #dadce0;
-        }
-        .contact-info {
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-        .footer {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 2px solid #e9ecef;
-            margin-top: 50px;
-            color: #6c757d;
-        }
-        ul, ol {
-            padding-left: 25px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .section-number {
-            background-color: #28a745;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+
+        .topbar-spacer { flex: 1; }
+
+        .topbar-back {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 10px;
+            gap: 6px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-3);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
-        strong {
-            color: #495057;
+
+        .topbar-back:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
         }
-        .acceptance-box {
-            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #065f46 0%, #059669 40%, #34d399 100%);
+            padding: 64px 32px 56px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.9);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
             color: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .hero-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.85);
+            position: relative;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-meta .dot {
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* ── Layout ── */
+        .layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 32px;
+            align-items: start;
+        }
+
+        /* ── TOC ── */
+        .toc {
+            position: sticky;
+            top: 80px;
+            padding-right: 40px;
+        }
+
+        .toc-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 14px;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .toc-list a {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            color: var(--text-3);
+            text-decoration: none;
+            line-height: 1.4;
+            transition: background 0.15s, color 0.15s;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .toc-list a.active {
+            color: var(--primary);
+            background: var(--primary-light);
+            border-left-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .toc-num {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 18px;
+            margin-top: 1px;
+        }
+
+        /* ── Content ── */
+        .content { min-width: 0; }
+
+        .danger-box {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .danger-box h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .danger-box p {
+            font-size: 0.87rem;
+            line-height: 1.65;
+            opacity: 0.92;
+            color: white;
+        }
+
+        .danger-box strong { color: white; opacity: 1; }
+
+        /* ── Sections ── */
+        .doc-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 88px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--badge-bg);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-1);
+            letter-spacing: -0.02em;
+        }
+
+        /* ── Blocks ── */
+        .info-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .info-block h3 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-block h3::before {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 14px;
+            border-radius: 2px;
+            background: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .info-block h4 {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--text-2);
+            margin: 14px 0 8px;
+        }
+
+        .warning-block {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-left: 4px solid var(--warning-accent);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            margin-bottom: 16px;
+        }
+
+        .warning-block h3 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 12px;
+        }
+
+        .warning-block h4 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #92400e;
+            margin: 14px 0 8px;
+        }
+
+        .warning-block p, .warning-block li { color: #78350f; }
+
+        .legal-block {
+            background: var(--legal-bg);
+            border: 1px solid var(--legal-border);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            margin-bottom: 16px;
+        }
+
+        .legal-block h3 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-2);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--contact-from) 0%, var(--contact-to) 100%);
+            border-radius: var(--radius);
+            padding: 28px 30px;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-card p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .contact-card strong { opacity: 1; color: white; }
+
+        .contact-card h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 20px 0 8px;
+        }
+
+        .contact-card ul { padding-left: 20px; }
+
+        .contact-card li {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-bottom: 5px;
+        }
+
+        ul, ol { padding-left: 20px; }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            color: var(--text-2);
+            line-height: 1.6;
+        }
+
+        p { color: var(--text-2); font-size: 0.9rem; line-height: 1.75; }
+
+        strong { color: var(--text-1); font-weight: 600; }
+
+        /* ── Footer ── */
+        .page-footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .footer-doc {
+            font-size: 0.82rem;
+            color: var(--text-3);
+            line-height: 1.7;
+        }
+
+        .footer-doc a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-doc a:hover { text-decoration: underline; }
+
+        /* ── Back to top ── */
+        #back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 20px rgba(5,150,105,0.4);
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 50;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #back-to-top:hover { background: var(--primary-dark); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .layout {
+                grid-template-columns: 1fr;
+                padding: 32px 20px;
+            }
+
+            .toc {
+                position: static;
+                padding-right: 0;
+                margin-bottom: 32px;
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 18px 20px;
+            }
+
+            .toc-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 4px;
+            }
+
+            .hero h1 { font-size: 2rem; }
+        }
+
+        @media (max-width: 520px) {
+            .topbar { padding: 0 16px; }
+            .hero { padding: 48px 20px 40px; }
+            .hero h1 { font-size: 1.75rem; }
+            #back-to-top { bottom: 20px; right: 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Terms of Service</h1>
-            <h2 style="border: none; margin: 0; color: #6c757d; font-size: 1.3rem;">GamePocket by Lunethyx Labs</h2>
+    <div id="progress-bar"></div>
+
+    <nav class="topbar">
+        <a href="index.html" class="topbar-logo">
+            <span>🎮</span> GamePocket
+        </a>
+        <div class="topbar-sep"></div>
+        <span class="topbar-page">Terms of Service</span>
+        <div class="topbar-spacer"></div>
+        <a href="index.html" class="topbar-back">← Back</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-tag">📜 Legal Document</div>
+        <h1>Terms of Service</h1>
+        <p class="hero-sub">GamePocket by Lunethyx Labs</p>
+        <div class="hero-meta">
+            <span>Effective: July 21, 2025</span>
+            <span class="dot"></span>
+            <span>Version 1.0</span>
+            <span class="dot"></span>
+            <span>Last Updated: July 21, 2025</span>
         </div>
-        
-        <div class="version-info">
-            <strong>Effective Date:</strong> July 21, 2025 | <strong>Version:</strong> 1.0 | <strong>Last Updated:</strong> July 21, 2025
-        </div>
+    </header>
 
-        <div class="acceptance-box">
-            <h3>🔒 Legal Agreement</h3>
-            <p><strong>PLEASE READ THESE TERMS CAREFULLY.</strong> By downloading, installing, accessing, or using GamePocket, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, do not use our application.</p>
-        </div>
-
-        <h2><span class="section-number">1</span>Acceptance of Terms</h2>
-        <div class="legal-section">
-            <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Lunethyx Labs ("Company," "we," "us," or "our") regarding your use of the GamePocket mobile application ("App," "Service," or "Application").</p>
-            
-            <h3>1.1 Agreement Formation</h3>
-            <p>By accessing or using GamePocket, you acknowledge that:</p>
-            <ul>
-                <li>You have read and understood these Terms</li>
-                <li>You agree to be bound by these Terms and our Privacy Policy</li>
-                <li>You are legally capable of entering into binding agreements</li>
-                <li>Your use of the App constitutes acceptance of these Terms</li>
+    <div class="layout">
+        <!-- Sidebar TOC -->
+        <aside class="toc">
+            <p class="toc-title">On this page</p>
+            <ul class="toc-list">
+                <li><a href="#section-1"><span class="toc-num">01</span>Acceptance of Terms</a></li>
+                <li><a href="#section-2"><span class="toc-num">02</span>Description of Service</a></li>
+                <li><a href="#section-3"><span class="toc-num">03</span>User Eligibility</a></li>
+                <li><a href="#section-4"><span class="toc-num">04</span>Prohibited Uses</a></li>
+                <li><a href="#section-5"><span class="toc-num">05</span>Intellectual Property</a></li>
+                <li><a href="#section-6"><span class="toc-num">06</span>Health &amp; Safety</a></li>
+                <li><a href="#section-7"><span class="toc-num">07</span>Disclaimers &amp; Liability</a></li>
+                <li><a href="#section-8"><span class="toc-num">08</span>Privacy &amp; Data</a></li>
+                <li><a href="#section-9"><span class="toc-num">09</span>Updates &amp; Modifications</a></li>
+                <li><a href="#section-10"><span class="toc-num">10</span>Termination</a></li>
+                <li><a href="#section-11"><span class="toc-num">11</span>Indemnification</a></li>
+                <li><a href="#section-12"><span class="toc-num">12</span>Dispute Resolution</a></li>
+                <li><a href="#section-13"><span class="toc-num">13</span>Miscellaneous</a></li>
+                <li><a href="#section-14"><span class="toc-num">14</span>Contact</a></li>
             </ul>
+        </aside>
 
-            <h3>1.2 Binding Nature</h3>
-            <p>These Terms remain in effect while you use GamePocket and continue until terminated in accordance with the provisions herein.</p>
-        </div>
+        <!-- Main content -->
+        <article class="content">
 
-        <h2><span class="section-number">2</span>Description of Service</h2>
-        <div class="highlight-box">
-            <h3>2.1 GamePocket Application</h3>
-            <p>GamePocket is a collection of offline mini-games designed for entertainment purposes. The App provides:</p>
-            <ul>
-                <li>Multiple mini-game experiences</li>
-                <li>Offline gameplay functionality</li>
-                <li>Local score tracking and progress saving</li>
-                <li>Customizable themes and settings</li>
-            </ul>
+            <div class="danger-box">
+                <h3>🔒 Legal Agreement</h3>
+                <p><strong>PLEASE READ THESE TERMS CAREFULLY.</strong> By downloading, installing, accessing, or using GamePocket, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, do not use our application.</p>
+            </div>
 
-            <h3>2.2 Service Characteristics</h3>
-            <ul>
-                <li><strong>Offline Operation:</strong> GamePocket operates entirely offline without internet connectivity requirements</li>
-                <li><strong>No User Accounts:</strong> The App does not require user registration or account creation</li>
-                <li><strong>Local Storage Only:</strong> All data is stored locally on your device</li>
-                <li><strong>No Social Features:</strong> The App does not include social networking or multiplayer functionality</li>
-            </ul>
-        </div>
+            <!-- Section 1 -->
+            <section id="section-1" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">1</div>
+                    <h2>Acceptance of Terms</h2>
+                </div>
+                <div class="legal-block">
+                    <h3>Agreement</h3>
+                    <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Lunethyx Labs ("Company," "we," "us," or "our") regarding your use of the GamePocket mobile application ("App," "Service," or "Application").</p>
+                    <h3 style="margin-top: 16px;">1.1 Agreement Formation</h3>
+                    <p>By accessing or using GamePocket, you acknowledge that:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>You have read and understood these Terms</li>
+                        <li>You agree to be bound by these Terms and our Privacy Policy</li>
+                        <li>You are legally capable of entering into binding agreements</li>
+                        <li>Your use of the App constitutes acceptance of these Terms</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">1.2 Binding Nature</h3>
+                    <p>These Terms remain in effect while you use GamePocket and continue until terminated in accordance with the provisions herein.</p>
+                </div>
+            </section>
 
-        <h2><span class="section-number">3</span>User Eligibility and Responsibilities</h2>
-        <div class="highlight-box">
-            <h3>3.1 Age Requirements</h3>
-            <p>GamePocket is suitable for users of all ages. However:</p>
-            <ul>
-                <li>Users under 13 should use the App under parental supervision</li>
-                <li>Parents are responsible for monitoring their children's app usage</li>
-                <li>Users under 18 must have parental consent to use the App</li>
-            </ul>
+            <!-- Section 2 -->
+            <section id="section-2" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">2</div>
+                    <h2>Description of Service</h2>
+                </div>
+                <div class="info-block">
+                    <h3>2.1 GamePocket Application</h3>
+                    <p>GamePocket is a collection of offline mini-games designed for entertainment purposes. The App provides:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Multiple mini-game experiences</li>
+                        <li>Offline gameplay functionality</li>
+                        <li>Local score tracking and progress saving</li>
+                        <li>Customizable themes and settings</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">2.2 Service Characteristics</h3>
+                    <ul>
+                        <li><strong>Offline Operation:</strong> GamePocket operates entirely offline without internet connectivity requirements</li>
+                        <li><strong>No User Accounts:</strong> The App does not require user registration or account creation</li>
+                        <li><strong>Local Storage Only:</strong> All data is stored locally on your device</li>
+                        <li><strong>No Social Features:</strong> The App does not include social networking or multiplayer functionality</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h3>3.2 User Responsibilities</h3>
-            <p>You agree to:</p>
-            <ul>
-                <li>Use the App in accordance with these Terms</li>
-                <li>Take appropriate breaks during gameplay to prevent health issues</li>
-                <li>Monitor your device's temperature and condition during use</li>
-                <li>Not attempt to reverse engineer, modify, or distribute the App</li>
-                <li>Comply with all applicable local, state, and federal laws</li>
-                <li>Use the App for personal, non-commercial purposes only</li>
-            </ul>
-        </div>
+            <!-- Section 3 -->
+            <section id="section-3" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">3</div>
+                    <h2>User Eligibility and Responsibilities</h2>
+                </div>
+                <div class="info-block">
+                    <h3>3.1 Age Requirements</h3>
+                    <p>GamePocket is suitable for users of all ages. However:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Users under 13 should use the App under parental supervision</li>
+                        <li>Parents are responsible for monitoring their children's app usage</li>
+                        <li>Users under 18 must have parental consent to use the App</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">3.2 User Responsibilities</h3>
+                    <p>You agree to:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Use the App in accordance with these Terms</li>
+                        <li>Take appropriate breaks during gameplay to prevent health issues</li>
+                        <li>Monitor your device's temperature and condition during use</li>
+                        <li>Not attempt to reverse engineer, modify, or distribute the App</li>
+                        <li>Comply with all applicable local, state, and federal laws</li>
+                        <li>Use the App for personal, non-commercial purposes only</li>
+                    </ul>
+                </div>
+            </section>
 
-        <h2><span class="section-number">4</span>Prohibited Uses and Conduct</h2>
-        <div class="legal-section">
-            <h3>4.1 Prohibited Activities</h3>
-            <p>You agree NOT to:</p>
-            <ul>
-                <li>Reverse engineer, decompile, or disassemble the App</li>
-                <li>Modify, adapt, or create derivative works based on the App</li>
-                <li>Distribute, sell, rent, lease, or sublicense the App</li>
-                <li>Remove or alter any proprietary notices or labels</li>
-                <li>Use the App for any illegal or unauthorized purposes</li>
-                <li>Attempt to gain unauthorized access to any part of the App</li>
-                <li>Interfere with or disrupt the App's functionality</li>
-                <li>Use automated tools or bots to interact with the App</li>
-            </ul>
+            <!-- Section 4 -->
+            <section id="section-4" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">4</div>
+                    <h2>Prohibited Uses and Conduct</h2>
+                </div>
+                <div class="legal-block">
+                    <h3>4.1 Prohibited Activities</h3>
+                    <p>You agree NOT to:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Reverse engineer, decompile, or disassemble the App</li>
+                        <li>Modify, adapt, or create derivative works based on the App</li>
+                        <li>Distribute, sell, rent, lease, or sublicense the App</li>
+                        <li>Remove or alter any proprietary notices or labels</li>
+                        <li>Use the App for any illegal or unauthorized purposes</li>
+                        <li>Attempt to gain unauthorized access to any part of the App</li>
+                        <li>Interfere with or disrupt the App's functionality</li>
+                        <li>Use automated tools or bots to interact with the App</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">4.2 Commercial Use Restrictions</h3>
+                    <p>GamePocket is licensed for personal, non-commercial use only. Commercial use, including but not limited to using the App in business environments, for profit-making activities, or for public demonstrations, is strictly prohibited without written consent from Lunethyx Labs.</p>
+                </div>
+            </section>
 
-            <h3>4.2 Commercial Use Restrictions</h3>
-            <p>GamePocket is licensed for personal, non-commercial use only. Commercial use, including but not limited to using the App in business environments, for profit-making activities, or for public demonstrations, is strictly prohibited without written consent from Lunethyx Labs.</p>
-        </div>
+            <!-- Section 5 -->
+            <section id="section-5" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">5</div>
+                    <h2>Intellectual Property Rights</h2>
+                </div>
+                <div class="info-block">
+                    <h3>5.1 Ownership</h3>
+                    <p>GamePocket and all related intellectual property rights are owned by Lunethyx Labs. This includes:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Source code, algorithms, and software architecture</li>
+                        <li>Game designs, mechanics, and user interfaces</li>
+                        <li>Graphics, audio, and multimedia content</li>
+                        <li>Trademarks, logos, and branding elements</li>
+                        <li>Documentation and associated materials</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">5.2 Limited License</h3>
+                    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use GamePocket solely for personal entertainment purposes in accordance with these Terms.</p>
+                    <h3 style="margin-top: 16px;">5.3 Third-Party Content</h3>
+                    <p>Any third-party libraries or content used in GamePocket are used in compliance with their respective licenses. We respect and acknowledge all third-party intellectual property rights.</p>
+                </div>
+            </section>
 
-        <h2><span class="section-number">5</span>Intellectual Property Rights</h2>
-        <div class="highlight-box">
-            <h3>5.1 Ownership</h3>
-            <p>GamePocket and all related intellectual property rights are owned by Lunethyx Labs. This includes:</p>
-            <ul>
-                <li>Source code, algorithms, and software architecture</li>
-                <li>Game designs, mechanics, and user interfaces</li>
-                <li>Graphics, audio, and multimedia content</li>
-                <li>Trademarks, logos, and branding elements</li>
-                <li>Documentation and associated materials</li>
-            </ul>
+            <!-- Section 6 -->
+            <section id="section-6" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">6</div>
+                    <h2>Health and Safety Disclaimer</h2>
+                </div>
+                <div class="warning-block">
+                    <h3>⚠️ Important Health and Safety Warnings</h3>
+                    <p><strong>READ CAREFULLY BEFORE USE:</strong></p>
+                    <h4>6.1 General Health Warnings</h4>
+                    <ul>
+                        <li><strong>Eye Strain:</strong> Prolonged screen time may cause eye fatigue, dryness, or strain</li>
+                        <li><strong>Repetitive Stress:</strong> Repeated tapping or swiping may cause finger, wrist, or arm discomfort</li>
+                        <li><strong>Posture:</strong> Poor posture during gameplay may lead to neck, back, or shoulder pain</li>
+                        <li><strong>Seizure Warning:</strong> Some individuals may be sensitive to flashing lights or patterns</li>
+                    </ul>
+                    <h4>6.2 Device Safety</h4>
+                    <ul>
+                        <li><strong>Overheating:</strong> Extended gameplay may cause device heating</li>
+                        <li><strong>Battery Drain:</strong> Intensive gaming may rapidly deplete battery life</li>
+                        <li><strong>Screen Burn-in:</strong> Static elements may cause temporary or permanent screen marking</li>
+                    </ul>
+                    <h4>6.3 Recommended Practices</h4>
+                    <ul>
+                        <li>Take 15-minute breaks every hour of gameplay</li>
+                        <li>Maintain proper lighting and viewing distance</li>
+                        <li>Stop immediately if you experience discomfort</li>
+                        <li>Ensure adequate ventilation around your device</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h3>5.2 Limited License</h3>
-            <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use GamePocket solely for personal entertainment purposes in accordance with these Terms.</p>
+            <!-- Section 7 -->
+            <section id="section-7" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">7</div>
+                    <h2>Disclaimers and Limitation of Liability</h2>
+                </div>
+                <div class="legal-block">
+                    <h3>7.1 "AS-IS" Disclaimer</h3>
+                    <p><strong>GAMEPOCKET IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND.</strong> To the maximum extent permitted by law, Lunethyx Labs disclaims all warranties, express or implied, including but not limited to:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Warranties of merchantability or fitness for a particular purpose</li>
+                        <li>Warranties of non-infringement or compatibility</li>
+                        <li>Warranties that the App will be error-free or uninterrupted</li>
+                        <li>Warranties regarding the accuracy or reliability of content</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">7.2 Limitation of Liability</h3>
+                    <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, LUNETHYX LABS SHALL NOT BE LIABLE FOR:</strong></p>
+                    <ul style="margin-top: 10px;">
+                        <li>Any direct, indirect, incidental, special, consequential, or punitive damages</li>
+                        <li>Loss of profits, revenue, data, use, goodwill, or other intangible losses</li>
+                        <li>Device damage, malfunction, or degradation of any kind</li>
+                        <li>Personal injury, health issues, or medical conditions</li>
+                        <li>Third-party claims or damages arising from your use of the App</li>
+                        <li>Any damages exceeding the amount you paid for the App (USD $0.00)</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">7.3 Assumption of Risk</h3>
+                    <p>You acknowledge and agree that your use of GamePocket is at your own risk. You assume all responsibility for:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Selecting appropriate gameplay duration and frequency</li>
+                        <li>Monitoring your health and well-being during use</li>
+                        <li>Protecting your device from damage or malfunction</li>
+                        <li>Complying with any medical restrictions or recommendations</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h3>5.3 Third-Party Content</h3>
-            <p>Any third-party libraries or content used in GamePocket are used in compliance with their respective licenses. We respect and acknowledge all third-party intellectual property rights.</p>
-        </div>
+            <!-- Section 8 -->
+            <section id="section-8" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">8</div>
+                    <h2>Privacy and Data Protection</h2>
+                </div>
+                <div class="info-block">
+                    <h3>8.1 Privacy Policy Integration</h3>
+                    <p>Our Privacy Policy is incorporated into these Terms by reference. By using GamePocket, you acknowledge that you have read and understood our <a href="privacy-policy.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Privacy Policy</a>.</p>
+                    <h3 style="margin-top: 16px;">8.2 No Data Collection</h3>
+                    <p>GamePocket does not collect, store, transmit, or process any personal information. All data remains on your device under your control.</p>
+                    <h3 style="margin-top: 16px;">8.3 Local Data Storage</h3>
+                    <p>Any data stored locally on your device (game preferences, scores, settings) is your responsibility to manage and protect.</p>
+                </div>
+            </section>
 
-        <h2><span class="section-number">6</span>Health and Safety Disclaimer</h2>
-        <div class="important-notice">
-            <h3>⚠️ Important Health and Safety Warnings</h3>
-            <p><strong>READ CAREFULLY BEFORE USE:</strong></p>
-            
-            <h4>6.1 General Health Warnings</h4>
-            <ul>
-                <li><strong>Eye Strain:</strong> Prolonged screen time may cause eye fatigue, dryness, or strain</li>
-                <li><strong>Repetitive Stress:</strong> Repeated tapping or swiping may cause finger, wrist, or arm discomfort</li>
-                <li><strong>Posture:</strong> Poor posture during gameplay may lead to neck, back, or shoulder pain</li>
-                <li><strong>Seizure Warning:</strong> Some individuals may be sensitive to flashing lights or patterns</li>
-            </ul>
+            <!-- Section 9 -->
+            <section id="section-9" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">9</div>
+                    <h2>Updates and Modifications</h2>
+                </div>
+                <div class="info-block">
+                    <h3>9.1 App Updates</h3>
+                    <p>We may periodically release updates to GamePocket to improve functionality, fix bugs, or add features. Updates may be:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Automatically downloaded through app stores</li>
+                        <li>Optional or required for continued functionality</li>
+                        <li>Subject to additional terms or license agreements</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">9.2 Terms Modifications</h3>
+                    <p>We reserve the right to modify these Terms at any time. Changes will be effective:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Upon posting the updated Terms with a new effective date</li>
+                        <li>After providing reasonable notice through the App or app store</li>
+                        <li>When you continue to use the App after the effective date</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h4>6.2 Device Safety</h4>
-            <ul>
-                <li><strong>Overheating:</strong> Extended gameplay may cause device heating</li>
-                <li><strong>Battery Drain:</strong> Intensive gaming may rapidly deplete battery life</li>
-                <li><strong>Screen Burn-in:</strong> Static elements may cause temporary or permanent screen marking</li>
-            </ul>
+            <!-- Section 10 -->
+            <section id="section-10" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">10</div>
+                    <h2>Termination</h2>
+                </div>
+                <div class="legal-block">
+                    <h3>10.1 Termination by User</h3>
+                    <p>You may terminate your use of GamePocket at any time by:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Uninstalling the App from your device</li>
+                        <li>Ceasing all use of the App</li>
+                        <li>Deleting all associated data from your device</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">10.2 Termination by Company</h3>
+                    <p>We may terminate or suspend your access to GamePocket immediately, without notice, if:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>You violate any provision of these Terms</li>
+                        <li>Your use of the App poses a security or legal risk</li>
+                        <li>We discontinue the App or cease operations</li>
+                    </ul>
+                    <h3 style="margin-top: 16px;">10.3 Effect of Termination</h3>
+                    <p>Upon termination:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Your license to use the App immediately ceases</li>
+                        <li>You must uninstall the App from all devices</li>
+                        <li>Provisions regarding liability, indemnification, and dispute resolution survive</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h4>6.3 Recommended Practices</h4>
-            <ul>
-                <li>Take 15-minute breaks every hour of gameplay</li>
-                <li>Maintain proper lighting and viewing distance</li>
-                <li>Stop immediately if you experience discomfort</li>
-                <li>Ensure adequate ventilation around your device</li>
-            </ul>
-        </div>
+            <!-- Section 11 -->
+            <section id="section-11" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">11</div>
+                    <h2>Indemnification</h2>
+                </div>
+                <div class="legal-block">
+                    <h3>Your Obligations</h3>
+                    <p>You agree to indemnify, defend, and hold harmless Lunethyx Labs, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Your use of GamePocket in violation of these Terms</li>
+                        <li>Your violation of any applicable laws or regulations</li>
+                        <li>Any content you provide or actions you take using the App</li>
+                        <li>Your violation of any third-party rights</li>
+                        <li>Any health issues or device damage resulting from your use</li>
+                    </ul>
+                </div>
+            </section>
 
-        <h2><span class="section-number">7</span>Disclaimers and Limitation of Liability</h2>
-        <div class="legal-section">
-            <h3>7.1 "AS-IS" Disclaimer</h3>
-            <p><strong>GAMEPOCKET IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND.</strong> To the maximum extent permitted by law, Lunethyx Labs disclaims all warranties, express or implied, including but not limited to:</p>
-            <ul>
-                <li>Warranties of merchantability or fitness for a particular purpose</li>
-                <li>Warranties of non-infringement or compatibility</li>
-                <li>Warranties that the App will be error-free or uninterrupted</li>
-                <li>Warranties regarding the accuracy or reliability of content</li>
-            </ul>
+            <!-- Section 12 -->
+            <section id="section-12" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">12</div>
+                    <h2>Dispute Resolution and Governing Law</h2>
+                </div>
+                <div class="legal-block">
+                    <h3>12.1 Governing Law</h3>
+                    <p>These Terms are governed by and construed in accordance with applicable laws, without regard to conflict of law principles.</p>
+                    <h3 style="margin-top: 16px;">12.2 Dispute Resolution</h3>
+                    <p>Any disputes arising out of or relating to these Terms or your use of GamePocket shall be resolved through:</p>
+                    <ol style="margin-top: 10px;">
+                        <li><strong>Informal Resolution:</strong> Good faith negotiations between the parties</li>
+                        <li><strong>Mediation:</strong> Binding mediation if informal resolution fails</li>
+                        <li><strong>Legal Proceedings:</strong> Court proceedings in the appropriate jurisdiction</li>
+                    </ol>
+                    <h3 style="margin-top: 16px;">12.3 Class Action Waiver</h3>
+                    <p>You agree that any dispute resolution proceedings will be conducted only on an individual basis and not in a class, consolidated, or representative action.</p>
+                </div>
+            </section>
 
-            <h3>7.2 Limitation of Liability</h3>
-            <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, LUNETHYX LABS SHALL NOT BE LIABLE FOR:</strong></p>
-            <ul>
-                <li>Any direct, indirect, incidental, special, consequential, or punitive damages</li>
-                <li>Loss of profits, revenue, data, use, goodwill, or other intangible losses</li>
-                <li>Device damage, malfunction, or degradation of any kind</li>
-                <li>Personal injury, health issues, or medical conditions</li>
-                <li>Third-party claims or damages arising from your use of the App</li>
-                <li>Any damages exceeding the amount you paid for the App (USD $0.00)</li>
-            </ul>
+            <!-- Section 13 -->
+            <section id="section-13" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">13</div>
+                    <h2>Miscellaneous Provisions</h2>
+                </div>
+                <div class="info-block">
+                    <h3>13.1 Severability</h3>
+                    <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
+                    <h3 style="margin-top: 16px;">13.2 Entire Agreement</h3>
+                    <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Lunethyx Labs regarding GamePocket.</p>
+                    <h3 style="margin-top: 16px;">13.3 No Waiver</h3>
+                    <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or any other provision.</p>
+                    <h3 style="margin-top: 16px;">13.4 Assignment</h3>
+                    <p>You may not assign or transfer your rights under these Terms. We may assign our rights and obligations to any third party.</p>
+                    <h3 style="margin-top: 16px;">13.5 Force Majeure</h3>
+                    <p>We are not liable for any failure to perform due to causes beyond our reasonable control, including natural disasters, government actions, or technical failures.</p>
+                </div>
+            </section>
 
-            <h3>7.3 Assumption of Risk</h3>
-            <p>You acknowledge and agree that your use of GamePocket is at your own risk. You assume all responsibility for:</p>
-            <ul>
-                <li>Selecting appropriate gameplay duration and frequency</li>
-                <li>Monitoring your health and well-being during use</li>
-                <li>Protecting your device from damage or malfunction</li>
-                <li>Complying with any medical restrictions or recommendations</li>
-            </ul>
-        </div>
+            <!-- Section 14 -->
+            <section id="section-14" class="doc-section">
+                <div class="section-header">
+                    <div class="section-badge">14</div>
+                    <h2>Contact Information</h2>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Legal and Support Contact</h3>
+                    <p><strong>Company:</strong> Lunethyx Labs</p>
+                    <p><strong>Email:</strong> lunethyxlabs@gmail.com</p>
+                    <p><strong>Subject Line for Legal Issues:</strong> "GamePocket Legal Inquiry"</p>
+                    <h4>📝 How to Contact Us</h4>
+                    <p>For questions about these Terms of Service, please include:</p>
+                    <ul>
+                        <li>Your specific question or concern</li>
+                        <li>Relevant details about your device or app version</li>
+                        <li>Any applicable screenshots or error messages</li>
+                    </ul>
+                    <p style="margin-top: 12px;"><strong>Response Time:</strong> We aim to respond to legal inquiries within 72 hours</p>
+                </div>
+            </section>
 
-        <h2><span class="section-number">8</span>Privacy and Data Protection</h2>
-        <div class="highlight-box">
-            <h3>8.1 Privacy Policy Integration</h3>
-            <p>Our Privacy Policy is incorporated into these Terms by reference. By using GamePocket, you acknowledge that you have read and understood our Privacy Policy.</p>
-
-            <h3>8.2 No Data Collection</h3>
-            <p>GamePocket does not collect, store, transmit, or process any personal information. All data remains on your device under your control.</p>
-
-            <h3>8.3 Local Data Storage</h3>
-            <p>Any data stored locally on your device (game preferences, scores, settings) is your responsibility to manage and protect.</p>
-        </div>
-
-        <h2><span class="section-number">9</span>Updates and Modifications</h2>
-        <div class="highlight-box">
-            <h3>9.1 App Updates</h3>
-            <p>We may periodically release updates to GamePocket to improve functionality, fix bugs, or add features. Updates may be:</p>
-            <ul>
-                <li>Automatically downloaded through app stores</li>
-                <li>Optional or required for continued functionality</li>
-                <li>Subject to additional terms or license agreements</li>
-            </ul>
-
-            <h3>9.2 Terms Modifications</h3>
-            <p>We reserve the right to modify these Terms at any time. Changes will be effective:</p>
-            <ul>
-                <li>Upon posting the updated Terms with a new effective date</li>
-                <li>After providing reasonable notice through the App or app store</li>
-                <li>When you continue to use the App after the effective date</li>
-            </ul>
-        </div>
-
-        <h2><span class="section-number">10</span>Termination</h2>
-        <div class="legal-section">
-            <h3>10.1 Termination by User</h3>
-            <p>You may terminate your use of GamePocket at any time by:</p>
-            <ul>
-                <li>Uninstalling the App from your device</li>
-                <li>Ceasing all use of the App</li>
-                <li>Deleting all associated data from your device</li>
-            </ul>
-
-            <h3>10.2 Termination by Company</h3>
-            <p>We may terminate or suspend your access to GamePocket immediately, without notice, if:</p>
-            <ul>
-                <li>You violate any provision of these Terms</li>
-                <li>Your use of the App poses a security or legal risk</li>
-                <li>We discontinue the App or cease operations</li>
-            </ul>
-
-            <h3>10.3 Effect of Termination</h3>
-            <p>Upon termination:</p>
-            <ul>
-                <li>Your license to use the App immediately ceases</li>
-                <li>You must uninstall the App from all devices</li>
-                <li>Provisions regarding liability, indemnification, and dispute resolution survive</li>
-            </ul>
-        </div>
-
-        <h2><span class="section-number">11</span>Indemnification</h2>
-        <div class="legal-section">
-            <p>You agree to indemnify, defend, and hold harmless Lunethyx Labs, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
-            <ul>
-                <li>Your use of GamePocket in violation of these Terms</li>
-                <li>Your violation of any applicable laws or regulations</li>
-                <li>Any content you provide or actions you take using the App</li>
-                <li>Your violation of any third-party rights</li>
-                <li>Any health issues or device damage resulting from your use</li>
-            </ul>
-        </div>
-
-        <h2><span class="section-number">12</span>Dispute Resolution and Governing Law</h2>
-        <div class="legal-section">
-            <h3>12.1 Governing Law</h3>
-            <p>These Terms are governed by and construed in accordance with applicable laws, without regard to conflict of law principles.</p>
-
-            <h3>12.2 Dispute Resolution</h3>
-            <p>Any disputes arising out of or relating to these Terms or your use of GamePocket shall be resolved through:</p>
-            <ol>
-                <li><strong>Informal Resolution:</strong> Good faith negotiations between the parties</li>
-                <li><strong>Mediation:</strong> Binding mediation if informal resolution fails</li>
-                <li><strong>Legal Proceedings:</strong> Court proceedings in the appropriate jurisdiction</li>
-            </ol>
-
-            <h3>12.3 Class Action Waiver</h3>
-            <p>You agree that any dispute resolution proceedings will be conducted only on an individual basis and not in a class, consolidated, or representative action.</p>
-        </div>
-
-        <h2><span class="section-number">13</span>Miscellaneous Provisions</h2>
-        <div class="highlight-box">
-            <h3>13.1 Severability</h3>
-            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
-
-            <h3>13.2 Entire Agreement</h3>
-            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Lunethyx Labs regarding GamePocket.</p>
-
-            <h3>13.3 No Waiver</h3>
-            <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or any other provision.</p>
-
-            <h3>13.4 Assignment</h3>
-            <p>You may not assign or transfer your rights under these Terms. We may assign our rights and obligations to any third party.</p>
-
-            <h3>13.5 Force Majeure</h3>
-            <p>We are not liable for any failure to perform due to causes beyond our reasonable control, including natural disasters, government actions, or technical failures.</p>
-        </div>
-
-        <h2><span class="section-number">14</span>Contact Information</h2>
-        <div class="contact-info">
-            <h3>📧 Legal and Support Contact</h3>
-            <p><strong>Company:</strong> Lunethyx Labs</p>
-            <p><strong>Email:</strong> lunethyxlabs@gmail.com</p>
-            <p><strong>Subject Line for Legal Issues:</strong> "GamePocket Legal Inquiry"</p>
-            
-            <h3>📝 How to Contact Us</h3>
-            <p>For questions about these Terms of Service, please include:</p>
-            <ul>
-                <li>Your specific question or concern</li>
-                <li>Relevant details about your device or app version</li>
-                <li>Any applicable screenshots or error messages</li>
-            </ul>
-            <p><strong>Response Time:</strong> We aim to respond to legal inquiries within 72 hours</p>
-        </div>
-
-        <div class="footer">
-            <p><strong>Document Information</strong></p>
-            <p>Terms of Service Version 1.0 | Effective Date: July 21, 2025</p>
-            <p>© 2025 Lunethyx Labs. All rights reserved.</p>
-            <p><em>This document was last reviewed and updated on July 21, 2025</em></p>
-            <p><strong>Related Documents:</strong> <a href="https://devalmobileapps-commits.github.io/minigames-legal/privacy-policy.html" style="color: #007bff;">Privacy Policy</a></p>
-        </div>
+        </article>
     </div>
+
+    <footer class="page-footer">
+        <div class="footer-doc">
+            <p>Terms of Service Version 1.0 &nbsp;·&nbsp; Effective Date: July 21, 2025</p>
+            <p>© 2025 Lunethyx Labs. All rights reserved.</p>
+            <p style="margin-top: 8px;"><em>This document was last reviewed and updated on July 21, 2025</em></p>
+            <p style="margin-top: 12px;"><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to top">↑</button>
+
+    <script>
+        const progressBar = document.getElementById('progress-bar');
+        const backToTop = document.getElementById('back-to-top');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+        const sections = document.querySelectorAll('.doc-section');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+            backToTop.classList.toggle('visible', scrollTop > 400);
+        });
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(a => a.classList.remove('active'));
+                    const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-20% 0px -75% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
 </body>
 </html>
